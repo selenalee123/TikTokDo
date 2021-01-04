@@ -1,43 +1,81 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, TouchableWithoutFeedback, Image } from 'react-native';
+import Video from 'react-native-video';
 
-const Post =() =>{
+import Entypo from 'react-native-vector-icons/Entypo';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Fontisto from 'react-native-vector-icons/Fontisto';
 
+import styles from './styles';
 
-     return (
-      <View>
-        <Text> index </Text>
-      </View>
-    );
+const Post = () => {
+  const sintel = require('../../assets/videos/demo.mp4');
+  const [paused, setPaused] = useState(false);
+  const kimkim = require('../../assets/images/kimkim.png');
+
+  const OnPlayPausePress = () => {
+    setPaused(!paused);
   };
+
+  return (
+    <View style={styles.container}>
+      <Text> Post screen </Text>
+      <TouchableWithoutFeedback onPress={OnPlayPausePress}>
+        <View>
+          <Video
+            source={sintel}
+            style={styles.video}
+            resizeMode="cover"
+            onError={(e: LoadError) => console.log(e)}
+            repeat={false}
+            paused={paused}
+          />
+
+          <View style={styles.uiContainer}>
+            <View style={styles.rightContainer}>
+              {/* <View style={styles.profilePictureContainer}> */}
+              <Image style={styles.profilePicture} source={kimkim} />
+
+              <View style={styles.iconContainer}>
+                <Entypo name={'heart'} size={40} color="white" />
+                <Text style={styles.songName}> 23 </Text>
+              </View>
+
+              <View style={styles.iconContainer}>
+                <FontAwesome name={'commenting'} size={40} color="white" />
+                <Text style={styles.songName}> 44 </Text>
+              </View>
+
+              <View style={styles.iconContainer}>
+                <Fontisto name={'share-a'} size={40} color="white" />
+                <Text style={styles.songName}> 55 </Text>
+              </View>
+            </View>
+
+
+            <View style={styles.bottomContainer}>
+              <View>
+                <Text style={styles.handle}>@kimkim</Text>
+                <Text style={styles.description}>Closer</Text>
+
+                <View style={styles.songRow}>
+                  <Entypo name={'beamed-note'} size={24} color="white" />
+                  <Text style={styles.songName}> I love you babay</Text>
+                </View>
+              </View>
+
+              {/* <Image style={styles.songImage} source={kimkim} /> */}
+            </View>
+            {/* </View> */}
+          </View>
+        </View>
+      </TouchableWithoutFeedback>
+    </View>
+  );
 };
 
 export default Post;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React, {useEffect, useState} from 'react';
 // import {View, TouchableWithoutFeedback, Text, Image, TouchableOpacity} from 'react-native';
