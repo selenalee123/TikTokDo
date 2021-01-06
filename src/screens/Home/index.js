@@ -1,21 +1,31 @@
-import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, FlatList, Dimensions} from 'react-native';
+import Post from '../../components/Post';
 
-export default class index extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+const post1 = {
+  id: 'p1',
+  user: {
+    id: 'u1',
+    username: '@kimkim',
+    imageUri: require('../../assets/images/kimkim.png'),
+  },
+  description: 'Sugar Shack ',
+  song: 'NF- the search',
+  songImage: '',
+  likes: 123,
+  comments: 144,
+  shares: 44,
+};
 
-  render() {
-    return (
-      <View>
-        <Text> Home Screen </Text>
-      </View>
-    );
-  }
-}
+const Home = () => {
+  return (
+    <View>
+      <Post post={post1} />
+    </View>
+  );
+};
 
+export default Home;
 // import React, {useEffect, useState} from 'react';
 // import {View, FlatList, Dimensions} from 'react-native';
 // import Post from '../../components/Post';

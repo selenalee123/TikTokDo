@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, TouchableWithoutFeedback, Image } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
 import Video from 'react-native-video';
 
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -9,19 +9,30 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 
 import styles from './styles';
 
-const Post = () => {
-  const sintel = require('../../assets/videos/demo.mp4');
+const Post = (props) => {
+  const [post, setPost] = useState(props.post);
+  const [isLiked, setIsLiked] = useState(false);
+  const sintel = require('../../assets/videos/montreal.mp4');
   const [paused, setPaused] = useState(false);
-  const kimkim = require('../../assets/images/kimkim.png');
+
 
   const OnPlayPausePress = () => {
     setPaused(!paused);
   };
 
+  const onLikePress = ()=>{
+    const likesToAdd = isLiked ? -1 :1;
+    setPost({
+      ...post,
+      likes: post.likes + likesToAdd,
+
+    });
+    setIsLiked(!isLiked);
+  };
+
   return (
     <View style={styles.container}>
-      <Text> Post screen </Text>
-      <TouchableWithoutFeedback onPress={OnPlayPausePress}>
+      <TouchableOpacity onPress={OnPlayPausePress}>
         <View>
           <Video
             source={sintel}
@@ -35,42 +46,44 @@ const Post = () => {
           <View style={styles.uiContainer}>
             <View style={styles.rightContainer}>
               {/* <View style={styles.profilePictureContainer}> */}
-              <Image style={styles.profilePicture} source={kimkim} />
+              <Image
+                style={styles.profilePicture}
+                source={post.user.imageUri}
+              />
 
-              <View style={styles.iconContainer}>
-                <Entypo name={'heart'} size={40} color="white" />
-                <Text style={styles.songName}> 23 </Text>
-              </View>
+              <TouchableOpacity style={styles.iconContainer} onPress={onLikePress}>
+                <AntDesign name={'heart'} size={40} color="white" />
+                <Text style={styles.statsLabel}> {post.likes}</Text>
+              </TouchableOpacity>
 
               <View style={styles.iconContainer}>
                 <FontAwesome name={'commenting'} size={40} color="white" />
-                <Text style={styles.songName}> 44 </Text>
+                <Text style={styles.statsLabel}> {post.comments} </Text>
               </View>
 
               <View style={styles.iconContainer}>
                 <Fontisto name={'share-a'} size={40} color="white" />
-                <Text style={styles.songName}> 55 </Text>
+                <Text style={styles.statsLabel}>{post.shares} </Text>
               </View>
             </View>
 
-
             <View style={styles.bottomContainer}>
               <View>
-                <Text style={styles.handle}>@kimkim</Text>
-                <Text style={styles.description}>Closer</Text>
+                <Text style={styles.handle}>{post.user.username}</Text>
+                <Text style={styles.description}>{post.description}</Text>
 
                 <View style={styles.songRow}>
                   <Entypo name={'beamed-note'} size={24} color="white" />
-                  <Text style={styles.songName}> I love you babay</Text>
+                  <Text style={styles.songName}> {post.song}</Text>
                 </View>
               </View>
 
-              {/* <Image style={styles.songImage} source={kimkim} /> */}
+              <Image style={styles.songImage} source={post.user.imageUri} />
             </View>
             {/* </View> */}
           </View>
         </View>
-      </TouchableWithoutFeedback>
+      </TouchableOpacity>
     </View>
   );
 };
