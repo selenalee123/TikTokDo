@@ -2,12 +2,17 @@ import React from 'react';
 import {StyleSheet, Text, SafeAreaView, View} from 'react-native';
 import Home from './src/screens/Home';
 import Post from './src/components/Post';
+import 'react-native-gesture-handler' ;
+import RootNavigation from './src/navigation';
+import HomeBottomTabNavigator from './src/navigation';
+
+
+
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Page content</Text>
-      <Home />
+      <HomeBottomTabNavigator />
     </SafeAreaView>
   );
 };

@@ -15,17 +15,15 @@ const Post = (props) => {
   const sintel = require('../../assets/videos/montreal.mp4');
   const [paused, setPaused] = useState(false);
 
-
   const OnPlayPausePress = () => {
     setPaused(!paused);
   };
 
-  const onLikePress = ()=>{
-    const likesToAdd = isLiked ? -1 :1;
+  const onLikePress = () => {
+    const likesToAdd = isLiked ? -1 : 1;
     setPost({
       ...post,
       likes: post.likes + likesToAdd,
-
     });
     setIsLiked(!isLiked);
   };
@@ -35,7 +33,7 @@ const Post = (props) => {
       <TouchableOpacity onPress={OnPlayPausePress}>
         <View>
           <Video
-            source={sintel}
+            source={post.videoUri}
             style={styles.video}
             resizeMode="cover"
             onError={(e: LoadError) => console.log(e)}
@@ -51,8 +49,14 @@ const Post = (props) => {
                 source={post.user.imageUri}
               />
 
-              <TouchableOpacity style={styles.iconContainer} onPress={onLikePress}>
-                <AntDesign name={'heart'} size={40} color="white" />
+              <TouchableOpacity
+                style={styles.iconContainer}
+                onPress={onLikePress}>
+                <AntDesign
+                  name={'heart'}
+                  size={40}
+                  color={isLiked ? 'red' : 'white'}
+                />
                 <Text style={styles.statsLabel}> {post.likes}</Text>
               </TouchableOpacity>
 
