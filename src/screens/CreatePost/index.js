@@ -1,3 +1,48 @@
+import React, { useEffect, useRef, useState } from 'react';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { v4 as uuidv4 } from 'uuid';
+
+import { Storage, API, graphqlOperation, Auth } from 'aws-amplify';
+import { useRoute, useNavigation } from '@react-navigation/native';
+
+import styles from './styles';
+import { createPost } from '../../graphql/mutations';
+
+const CreatePost = () => {
+
+    const [description, setDescription] = useState('');
+    const route = useRoute();
+    const navigation = useNavigation();
+
+    const onPublish=()=>{
+//upload video to the cloud
+
+//create post in the database(APi)
+
+
+    }
+    return (
+        <View style={styles.container}>
+
+            <TextInput
+                value={description}
+                onTextChange={setDescription}
+                numberOfLines={5}
+                placeholder={"Description"}
+                style={styles.textInput}
+            >
+            </TextInput>
+            <TouchableOpacity style={styles.button} onPress={onPublish}>
+                <Text>Publish</Text>
+            </TouchableOpacity>
+        </View>
+    );
+};
+
+export default CreatePost;
+
+
+
 // import React, {useEffect, useRef, useState} from 'react';
 // import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 // import {v4 as uuidv4} from 'uuid';
@@ -79,3 +124,4 @@
 // };
 
 // export default CreatePost;
+

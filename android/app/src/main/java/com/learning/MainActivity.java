@@ -2,6 +2,8 @@ package com.learning;
 
 import com.facebook.react.ReactActivity;
 
+// import org.reactnative.camera.RNCameraPackage;
+
 public class MainActivity extends ReactActivity {
 
   /**
