@@ -74,7 +74,7 @@ export default [
       imageUri: require('../src/assets/images/kimkim.png'),
     },
     description: 'never give up ',
-    songName: 'NF - The search',
+    song: 'NF - The search',
     songImage:
       'https://influencermarketinghub.com/wiki/wp-content/uploads/2020/08/1657369265111046_c5_720x720.jpeg',
     likes: 123,
@@ -91,7 +91,7 @@ export default [
       imageUri: require('../src/assets/images/kimkim.png'),
     },
     description: 'hahahah oh boy @borat',
-    songName: 'NF - The search',
+    song: 'NF - The search',
     songImage:
       'https://influencermarketinghub.com/wiki/wp-content/uploads/2020/08/1657369265111046_c5_720x720.jpeg',
     likes: 123,

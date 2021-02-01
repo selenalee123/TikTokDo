@@ -1,6 +1,6 @@
 {
     "identityPoolName": "tiktokdo9e5a7a51_identitypool_9e5a7a51",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "tiktok9e5a7a51",
     "userPoolName": "tiktokdo9e5a7a51_userpool_9e5a7a51",
     "autoVerifiedAttributes": [

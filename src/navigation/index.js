@@ -24,14 +24,14 @@ const RootNavigation = () => {
         <Stack.Screen
           name="Home"
           component={HomeBottomTabNavigator} />
-        {/* <Stack.Screen
+        <Stack.Screen
           options={{
             headerShown: true,
             title: 'Post',
           }}
           name="CreatePost"
           component={CreatePost}
-        /> */}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

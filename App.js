@@ -20,7 +20,12 @@ import { getUser } from './src/graphql/queries';
 
 import Amplify from 'aws-amplify'
 import config from './aws-exports'
-Amplify.configure(config)
+Amplify.configure({
+  ...config,
+  Analytics: {
+    disabled: true,
+  },
+});
 
 const randomImages = [
   'https://hieumobile.com/wp-content/uploads/avatar-among-us-2.jpg',
