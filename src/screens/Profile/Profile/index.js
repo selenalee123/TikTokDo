@@ -29,7 +29,7 @@ const Profile = () => {
             <Title style={[styles.title, {
               marginTop: 15,
               marginBottom: 5,
-            }]}>John Doe</Title>
+            }]}> Kim Kim Ly </Title>
             <Caption style={styles.caption}>@j_doe</Caption>
           </View>
         </View>

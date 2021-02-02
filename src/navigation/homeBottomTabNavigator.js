@@ -3,6 +3,7 @@ import {Image, Text} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from '../screens/Home';
 import EditProfile from '../screens/Profile/EditProfile';
+import Inbox from '../screens/Inbox';
 
 import Camera from '../screens/Camera';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -11,6 +12,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import plusIcon from '../assets/images/plus-icon.png';
 import CreatePost from '../screens/CreatePost';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -56,7 +58,7 @@ const HomeBottomTabNavigator = () => {
       />
       <Tab.Screen
         name={'Inbox'}
-        component={CreatePost}
+        component={Inbox}
         options={{
           tabBarIcon: ({color}) => (
             <MaterialCommunityIcons
