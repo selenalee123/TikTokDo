@@ -185,23 +185,24 @@ const Post = (props) => {
                 <Fontisto name={'share-a'} size={35} color="white" />
                 <Text style={styles.statsLabel}>{post.shares}</Text>
               </View>
+            </View>
 
-              <View style={styles.bottomContainer}>
-                <View>
-                  <Text style={styles.handle}>@{post.user.username}</Text>
-                  <Text style={styles.description}>{post.description}</Text>
+            <View style={styles.bottomContainer}>
+              <View>
+                <Text style={styles.handle}>@{post.user.username}</Text>
+                <Text style={styles.description}>{post.description}</Text>
 
-                  <View style={styles.songRow}>
-                    <Entypo name={'beamed-note'} size={24} color="white" />
-                    <Text style={styles.songName}>{post.song.name}</Text>
-                  </View>
+                <View style={styles.songRow}>
+                  <Entypo name={'beamed-note'} size={24} color="white" />
+                  <Text style={styles.songName}>{post.song.name}</Text>
                 </View>
-
-                <Image
-                  style={styles.songImage}
-                  source={{ uri: post.song.imageUri }}
-                />
               </View>
+
+              <Image
+                style={styles.songImage}
+                source={{ uri: post.song.imageUri }}
+              />
+
 
             </View>
           </View>

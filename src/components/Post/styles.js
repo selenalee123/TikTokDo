@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: Dimensions.get('window').height - 50,
     paddingBottom: 15,
-    backgroundColor:"black" //add in by Kim Kim
+     //add in by Kim Kim
   },
   videPlayButton: {
     position: 'absolute',

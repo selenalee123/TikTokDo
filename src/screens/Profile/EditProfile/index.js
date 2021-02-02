@@ -141,7 +141,7 @@ export default function EditProfile() {
             </View>
           </TouchableOpacity>
           <Text style={{marginTop: 10, fontSize: 18, fontWeight: 'bold'}}>
-            John Doe
+         Kim Kim Ly
           </Text>
         </View>
 
