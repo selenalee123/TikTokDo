@@ -4,6 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from '../screens/Home';
 import EditProfile from '../screens/Profile/EditProfile';
 import Inbox from '../screens/Inbox';
+import ExploreNavigator from './ExploreNavigator';
 
 import Camera from '../screens/Camera';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -37,7 +38,7 @@ const HomeBottomTabNavigator = () => {
 
       <Tab.Screen
         name={'Search'}
-        component={Home}
+        component={ExploreNavigator}
         options={{
           tabBarIcon: ({color}) => (
             <AntDesign name={'search1'} size={25} color={color} />
