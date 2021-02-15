@@ -81,6 +81,8 @@ const CreatePost = () => {
 export default CreatePost;
 
 
+
+
 // import React, {useEffect, useRef, useState} from 'react';
 // import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 // import {v4 as uuidv4} from 'uuid';

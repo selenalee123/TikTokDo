@@ -22,14 +22,15 @@
 // export default Home;
 
 
-import React, {useEffect, useState} from 'react';
-import {View,Text, FlatList, Dimensions} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, FlatList, Dimensions } from 'react-native';
 import Post from '../../components/Post';
-import {API, graphqlOperation} from 'aws-amplify';
+import { API, graphqlOperation } from 'aws-amplify';
 
 import posts from '../../../data/posts';
 
-import {listPosts} from '../../graphql/queries';
+import { listPosts } from '../../graphql/queries';
+
 
 const Home = () => {
   // const [posts, setPosts] = useState([]);
@@ -48,12 +49,16 @@ const Home = () => {
   //   fetchPost();
   // }, []);
 
+
+
+
   return (
     <View>
+
       <FlatList
         data={posts}
-        renderItem={({item}) => <Post post={item} />}
-        showsVerticalScrollIndicator={false}
+        renderItem={({ item }) => <Post post={item} />}
+        showsVerticalScrollIndicator={true}
         snapToInterval={Dimensions.get('window').height - 130}
         snapToAlignment={'start'}
         decelerationRate={'fast'}
